@@ -1,0 +1,17 @@
+---
+- hosts: webserver
+  become: yes
+  tasks:
+  - name: installing git
+    apt:
+      name: git
+      state: present
+      update_cache: yes
+  - name: installing tree
+    apt:
+      name: tree
+      state: present
+  - name: installing apache
+    apt:
+      name: apache2
+      state: present
